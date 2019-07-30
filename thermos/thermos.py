@@ -1,15 +1,15 @@
-from flask import Flask,render_template,url_for
+from flask import Flask,render_template
+from User import User
 
 app=Flask(__name__)
 
 
-@app.route('/123456')
-
+@app.route('/')
 @app.route('/index')
 def index():
-    render_template('templates/index.html')
-    print("test")
+    user = User("jan", "kowalski")
+    return render_template('index.html',Title="Title passed",user=user,Text=["asd","bcd","123"])
 
 if __name__== "__main__":
-    app.run()
+    app.run(debug=True)
 
