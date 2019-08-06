@@ -5,9 +5,12 @@ Welcome to Index
 
  {% block content %}
 <form action="" method="post">
+    {{ form.hidden_tag() }}
 <p>
-    Please enter your bookmark
-    <input type="text" name="url">
+    Please enter your bookmark<br>
+    {{ form.url(size=50)}}<br>
+        {{ form.description(size=50)}}
+
     <p>
 
     <button type="submit" >Submit here</button>
